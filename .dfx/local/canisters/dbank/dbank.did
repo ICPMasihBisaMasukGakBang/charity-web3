@@ -1,0 +1,4 @@
+service : {
+  donate: (nat) -> (nat);
+  getCharityDonationMoney: () -> (nat) query;
+}
