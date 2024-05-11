@@ -3,9 +3,6 @@ import Debug "mo:base/Debug";
 actor Charity {
   var charityDonationMoney = 0;
 
-
-
-  
   public query func getCharityDonationMoney() : async Nat {
     return charityDonationMoney;
   };
