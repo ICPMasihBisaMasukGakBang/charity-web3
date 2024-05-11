@@ -1,5 +1,6 @@
 import Debug "mo:base/Debug";
 import Array "mo:base/Array";
+import List "mo:base/List";
 
 actor Charity {
   var charityDonationMoney = 0;
@@ -28,16 +29,17 @@ actor Charity {
   };
 
   // Define the variable to store Charity Posts
-  var charityPosts : [CharityPost] = [];
+  var charityPosts = List.nil<CharityPost>() ;
 
   // Query function to retrieve all Charity Posts
   public func getCharityPosts() : async [CharityPost] {
-    return charityPosts;
+    return List.toArray(charityPosts);
   };
 
+
   // Function to add a new Charity Post
-  public func addCharityPost(post : CharityPost) : async () {
-    charityPosts := Array.append<CharityPost>(charityPosts, [post]);
+  public func addCharityPost(post : CharityPost) {
+    charityPosts := List.push<CharityPost>(post, charityPosts) // => ?(0, null);
   };
 
 };
