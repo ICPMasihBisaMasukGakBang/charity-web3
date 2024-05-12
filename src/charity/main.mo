@@ -4,8 +4,6 @@ import List "mo:base/List";
 import Text "mo:base/Text";
 
 actor Charity {
-  var charityDonationMoney = 0;
-
   type Donators = {
     idCharity : Text;
     address : Text;
@@ -26,7 +24,6 @@ actor Charity {
     location : Text;
     donationTargetRangeDate : Text;
     detailOfFund : Text;
-    amountOfDonation : Nat;
   };
 
   // Define the variable to store Charity Posts
