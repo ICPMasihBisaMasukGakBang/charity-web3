@@ -9,7 +9,7 @@ actor Charity {
     address : Text;
     date : Text;
     amount : Nat;
-    addressWallet : Nat;
+    addressWallet : Text;
   };
 
   type CharityPost = {
@@ -57,10 +57,15 @@ actor Charity {
     donators := List.push<Donators>(donator, donators);
   };
 
-  public func findDonatorById(id : Text) : async ?Donators {
-    return List.find<Donators>(donators, func donator {
-      donator.idCharity == id
+  public func findDonatorsByCharityId(idCharity : Text): async [Donators] {
+    var tempDonators = List.nil<Donators>();
+    List.iterate<Donators>(donators, func donator {
+      if(donator.idCharity == idCharity) {
+        tempDonators := List.push<Donators>(donator, tempDonators);
+      }
     });
+
+    return List.toArray(tempDonators);
   };
 
   public func totalAmountCharityPostById(id: Text) : async Nat {
