@@ -40,6 +40,12 @@ actor Charity {
     charityPosts := List.push<CharityPost>(post, charityPosts)
   };
 
+  public func findCharityPostId(id : Text) : async ?CharityPost {
+    return List.find<CharityPost>(charityPosts, func post {
+      post.idCharity == id
+    });
+  };
+
   // Query function to retrieve all Donators
   public func getDonators() : async [Donators] {
     return List.toArray(donators);
@@ -48,5 +54,11 @@ actor Charity {
     // Function to add a new Donators
   public func donate(donator : Donators) {
     donators := List.push<Donators>(donator, donators);
+  };
+
+  public func findDonatorById(id : Text) : async ?Donators {
+    return List.find<Donators>(donators, func donator {
+      donator.idCharity == id
+    });
   };
 };
