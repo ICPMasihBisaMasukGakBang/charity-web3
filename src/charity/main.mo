@@ -9,6 +9,7 @@ actor Charity {
     address : Text;
     date : Text;
     amount : Nat;
+    addressWallet : Nat;
   };
 
   type CharityPost = {
@@ -61,4 +62,13 @@ actor Charity {
       donator.idCharity == id
     });
   };
+
+  public func totalAmountCharityPostById(id: Text) : async Nat {
+    var totalAmount : Nat = 0;
+    List.iterate<Donators>(donators, func donator {
+      totalAmount += donator.amount;
+    });
+
+    return totalAmount;
+  }
 };
