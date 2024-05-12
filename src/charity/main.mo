@@ -15,7 +15,7 @@ actor Charity {
 
   type CharityPost = {
     idCharity : Text;
-    disabled : Text;
+    category : Text;
     typeDonation : Text;
     name : Text;
     phone : Text;
