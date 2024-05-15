@@ -1,4 +1,4 @@
-import { Press_Start_2P, IBM_Plex_Mono } from "next/font/google";
+// import { Press_Start_2P, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 const pressStart2P = Press_Start_2P({ subsets: ["latin"], weight: "400" });

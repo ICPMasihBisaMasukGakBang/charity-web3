@@ -11,9 +11,13 @@ export default function CreateDonate(){
             <div className="flex flex-col">
               <label className="pl-4" htmlFor="category">Select Category</label>
               <div className="flex items-center w-max relative">
-                <input type="text" placeholder="disabled" className="border border-black rounded-full bg-muted placeholder:text-muted px-12 p-1" />
-                <FaWheelchair className="absolute left-4" size={24} />
-                <FaChevronDown className="absolute right-4" size={24} />
+                <select placeholder="disabled" className="border border-black rounded-full bg-muted placeholder:text-muted px-12 p-1" >
+                  <option value="disabled">
+                    <FaWheelchair className="absolute left-4" size={24} />
+                    Disabled
+                  </option>
+                  <FaChevronDown className="absolute right-4" size={24} />
+                </select>
               </div>
               <h2>Donation will be directed to :</h2>
               <div className="flex gap-8">

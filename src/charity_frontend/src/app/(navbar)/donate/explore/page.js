@@ -1,5 +1,6 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import { IoShareSocial } from 'react-icons/io5'
+
 export default function DonatePage(){
   return (
     <>

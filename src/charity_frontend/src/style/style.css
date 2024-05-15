@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  height: 100%;
+}
+
+@layer base {
+  h1 {
+    @apply md:text-3xl text-2xl
+  }
+  h2 {
+    @apply md:text-2xl text-xl
+  }
+  h3 {
+    @apply md:text-xl text-base
+  }
+}
+
+@layer utilities {
+  .active {
+    @apply bg-red-orange text-active
+  }
+}
+
+.font-press-start-2p {
+  font-family: "Press Start 2P",  system-ui; 
+  font-weight: 400;
+  font-style: normal;
+}

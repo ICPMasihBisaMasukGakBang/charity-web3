@@ -1,5 +1,3 @@
-import Debug "mo:base/Debug";
-import Array "mo:base/Array";
 import List "mo:base/List";
 import Text "mo:base/Text";
 
@@ -75,5 +73,5 @@ actor Charity {
     });
 
     return totalAmount;
-  }
+  };
 };

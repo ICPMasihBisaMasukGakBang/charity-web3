@@ -1,8 +1,18 @@
 {
   "canisters": {
-    "charity": {
-      "main": "src/charity/main.mo",
+    "charity_backend": {
+      "main": "src/charity_backend/main.mo",
       "type": "motoko"
+    },
+    "charity_frontend": {
+      "dependencies": [
+        "charity_backend"
+      ],
+      "source": [
+        "src/charity_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "charity_frontend"
     }
   },
   "defaults": {
@@ -11,12 +21,7 @@
       "packtool": ""
     }
   },
-  "dfx": "0.9.3",
-  "networks": {
-    "local": {
-      "bind": "127.0.0.1:8000",
-      "type": "ephemeral"
-    }
-  },
+  "dfx": "0.20.0",
+  "output_env_file": ".env",
   "version": 1
 }
