@@ -1,7 +1,7 @@
 import { FcEnteringHeavenAlive } from "react-icons/fc";
 import { MdOutlineExplore } from "react-icons/md";
 import { IoWalletOutline,IoSettingsOutline, IoCreateOutline  } from "react-icons/io5";
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 export default function SideNavbar(){
   return (
@@ -9,21 +9,35 @@ export default function SideNavbar(){
       <FcEnteringHeavenAlive className="text-center text-black" size={64} />
       <nav className=" w-full">
         <ul className="flex flex-col gap-4">
-          <li className={`flex px-6 items-center gap-2 py-2 ${window.location.href === "/donate/explore" ? "active": ""}`}>
-            <MdOutlineExplore size={24} />
-            <Link to="/donate/explore">Explore</Link>
+          <li>
+            <NavLink to="/donate/explore" className={`flex px-6 items-center gap-2 py-2`}>
+              <MdOutlineExplore size={24} />
+              Explore
+            </NavLink>
           </li>
-          <li className={`flex px-6 items-center gap-2 py-2 ${window.location.to === "/donate/create" ? "active": ""}`}>
-            <IoCreateOutline size={24} />
-            <Link to="/donate/create">Create</Link>
+          <li>
+            <NavLink to="/donate/create" className={`flex px-6 items-center gap-2 py-2`}>
+              <IoCreateOutline size={24} />
+              Create
+            </NavLink>
           </li>
-          <li className={`flex px-6 items-center gap-2 py-2 ${window.location.to === "/wallet" ? "active": ""}`}>
-            <IoWalletOutline size={24} />
-            <Link to="/wallet">Wallet</Link>
+          <li>
+            <NavLink to="/donate" className={`flex px-6 items-center gap-2 py-2`}>
+              <IoCreateOutline size={24} />
+              Donate
+            </NavLink>
           </li>
-          <li className={`flex px-6 items-center gap-2 py-2 ${window.location.to === "/settings" ? "active": ""}`}>
-            <IoSettingsOutline size={24} />
-            <Link to="/settings">Settings</Link>
+          <li>
+            <NavLink to="/transaction" className={`flex px-6 items-center gap-2 py-2`}>
+              <IoWalletOutline size={24} />
+              Transaction
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/settings" className={`flex px-6 items-center gap-2 py-2`}>
+              <IoSettingsOutline size={24} />
+              Settings
+            </NavLink>
           </li>
         </ul>
       </nav>
