@@ -28,13 +28,13 @@ function WalletPage(){
               <span>Activity</span>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="grid grid-cols-2">
             {
               charityPosts?.map((charityPost)=> (
-                <div key={charityPost.idCharity} className="flex *:flex-grow">
+                <>
                   <span className="border-[#FD5A4757] border-r-2">{charityPost?.idCharity}</span>
                   <span>{charityPost?.typeDonation}</span>
-                </div>
+                </>
               ))
             }
           </div>

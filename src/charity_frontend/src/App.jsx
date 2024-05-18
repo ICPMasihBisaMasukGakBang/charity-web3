@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 // import { charity_backend } from '../../declarations/charity_backend';
 import {BrowserRouter as Router, Routes,Route} from 'react-router-dom'
-import {Layout, CreateDonate, DonatePage, ExplorePage, LoginForm, SettingsPage, TransactionPage, RegisterForm} from './components';
+import {Layout, CreateCharity, DonatePage, ExplorePage, LoginForm, SettingsPage, TransactionPage, RegisterForm} from './components';
 
 function App() {
   // const [greeting, setGreeting] = useState('');
@@ -26,8 +26,8 @@ function App() {
           <Layout />
         }>
           <Route path="/donate" element={<DonatePage />} />
-          <Route path="/donate/create" element={<CreateDonate />} />
-          <Route path="/donate/explore" element={<ExplorePage />} />
+          <Route path="/charity" element={<CreateCharity />} />
+          <Route path="/explore" element={<ExplorePage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/transaction" element={<TransactionPage />} />
           <Route path="/register" element={<RegisterForm />} />
